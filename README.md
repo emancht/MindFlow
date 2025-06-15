@@ -117,12 +117,6 @@ GET    /api/users/suggestions
 
 ---
 
-## 📸 Screenshot
-
-> Replace the image link above with an actual screenshot of your UI after hosting or uploading to a service like Imgur or GitHub CDN.
-
----
-
 ## 🛠️ Setup Instructions
 
 ### Backend
