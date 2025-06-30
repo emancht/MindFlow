@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/users';
+// const API_URL = 'http://localhost:5000/api/users';
+const API_URL = `${import.meta.env.VITE_API_URL}/api/users`;
 
 // Configure axios to include credentials
 axios.defaults.withCredentials = true;
@@ -20,8 +21,8 @@ export const updateProfile = async (formData) => {
   try {
     const response = await axios.put(`${API_URL}/profile`, formData, {
       headers: {
-        'Content-Type': 'multipart/form-data'
-      }
+        'Content-Type': 'multipart/form-data',
+      },
     });
     return response.data;
   } catch (error) {

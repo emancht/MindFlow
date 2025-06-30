@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/comments';
+// const API_URL = 'http://localhost:5000/api/comments';
+const API_URL = `${import.meta.env.VITE_API_URL}/api/comments`;
 
 // Configure axios to include credentials
 axios.defaults.withCredentials = true;

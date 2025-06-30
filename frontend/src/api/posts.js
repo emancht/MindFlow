@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/posts';
-
+// const API_URL = 'http://localhost:5000/api/posts';
+const API_URL = `${import.meta.env.VITE_API_URL}/api/posts`;
 // Configure axios to include credentials
 axios.defaults.withCredentials = true;
 
@@ -10,8 +10,8 @@ export const createPost = async (postData) => {
   try {
     const response = await axios.post(API_URL, postData, {
       headers: {
-        'Content-Type': 'multipart/form-data'
-      }
+        'Content-Type': 'multipart/form-data',
+      },
     });
     return response.data;
   } catch (error) {
@@ -23,7 +23,7 @@ export const createPost = async (postData) => {
 export const getPosts = async (page = 1, limit = 10, tag = '') => {
   try {
     const response = await axios.get(API_URL, {
-      params: { page, limit, tag }
+      params: { page, limit, tag },
     });
     return response.data;
   } catch (error) {
@@ -35,7 +35,7 @@ export const getPosts = async (page = 1, limit = 10, tag = '') => {
 export const getFeedPosts = async (page = 1, limit = 10) => {
   try {
     const response = await axios.get(`${API_URL}/feed`, {
-      params: { page, limit }
+      params: { page, limit },
     });
     return response.data;
   } catch (error) {
@@ -58,8 +58,8 @@ export const updatePost = async (postId, postData) => {
   try {
     const response = await axios.put(`${API_URL}/${postId}`, postData, {
       headers: {
-        'Content-Type': 'multipart/form-data'
-      }
+        'Content-Type': 'multipart/form-data',
+      },
     });
     return response.data;
   } catch (error) {
